@@ -221,12 +221,15 @@ export default function Home() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-md border-b border-white/10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="flex justify-between items-center h-14 sm:h-16">
-            <div className="flex items-center gap-2 sm:gap-3">
-              <div className="w-6 h-6 sm:w-8 sm:h-10 lg:w-10 lg:h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg sm:rounded-xl flex items-center justify-center">
-                <Rocket className="w-3 h-3 sm:w-4 sm:h-4 lg:w-6 lg:h-6 text-white" />
-              </div>
-              <span className="text-sm sm:text-base lg:text-xl font-bold text-white">Ardin</span>
-            </div>
+            <div className="flex items-center">
+            <img
+              src="/pojokan.png"
+              alt="Ardin logo"
+              className="h-6 sm:h-8 lg:h-10 w-auto object-contain"
+              loading="eager"
+            />
+          </div>
+
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-4 lg:gap-8">
@@ -342,6 +345,15 @@ export default function Home() {
                   ))}
                 </div>
               </div>
+              
+              {/* Floating medal icon - hidden on mobile 
+              <div className="absolute -top-2 -right-2 sm:top-2 sm:right-2 lg:top-4 lg:right-4 bg-yellow-500/20 backdrop-blur-md rounded-full p-1.5 sm:p-2 lg:p-3 float-icon-slow hidden sm:block">
+                <span className="text-yellow-400 text-lg sm:text-xl lg:text-2xl">🏆</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>*/}
 
       {/* Skills Section */}
       <section id="skills" className="relative py-16 sm:py-20 lg:py-24 z-10">
