@@ -1,141 +1,174 @@
-# 🚀 Welcome to Z.ai Code Scaffold
+# Ardin's Portfolio Website
 
-A modern, production-ready web application scaffold powered by cutting-edge technologies, designed to accelerate your development with [Z.ai](https://chat.z.ai)'s AI-powered coding assistance.
+A modern neon soft-glow dark UI portfolio website built with Next.js 15, TypeScript, and Tailwind CSS.
 
-## ✨ Technology Stack
+## Features
 
-This scaffold provides a robust foundation built with:
+- **Modern Dark Theme**: Neon soft-glow effects with gradient animations
+- **Smooth Image Slider**: Auto-rotating image carousel with manual controls
+- **Fully Responsive Design**: Mobile-first approach with fluid layouts and typography
+- **Interactive Components**: 
+  - Skill cards with popup modals
+  - Project showcase with detailed descriptions
+  - Contact form with web3forms integration
+- **Floating Icons**: Animated decorative elements throughout
+- **Typography**: Geologica font with bold text styling
+- **Performance Optimized**: Lazy loading, responsive images, and smooth animations
 
-### 🎯 Core Framework
-- **⚡ Next.js 15** - The React framework for production with App Router
-- **📘 TypeScript 5** - Type-safe JavaScript for better developer experience
-- **🎨 Tailwind CSS 4** - Utility-first CSS framework for rapid UI development
+## Responsive Design Features
 
-### 🧩 UI Components & Styling
-- **🧩 shadcn/ui** - High-quality, accessible components built on Radix UI
-- **🎯 Lucide React** - Beautiful & consistent icon library
-- **🌈 Framer Motion** - Production-ready motion library for React
-- **🎨 Next Themes** - Perfect dark mode in 2 lines of code
+### **Fluid Layout System**
+- **Container-based**: Uses responsive containers with max-widths
+- **Fluid Typography**: CSS `clamp()` for smooth font scaling across viewports
+- **Flexible Grid**: Auto-fit grids that adapt to screen size
+- **Touch-friendly**: Minimum 44px touch targets for mobile
 
-### 📋 Forms & Validation
-- **🎣 React Hook Form** - Performant forms with easy validation
-- **✅ Zod** - TypeScript-first schema validation
+### **Breakpoint Strategy**
+- **Mobile**: < 640px (sm) - Single column, compact navigation
+- **Tablet**: 640px - 1024px (sm-md) - Two-column grids
+- **Desktop**: > 1024px (lg-xl) - Multi-column layouts, full navigation
 
-### 🔄 State Management & Data Fetching
-- **🐻 Zustand** - Simple, scalable state management
-- **🔄 TanStack Query** - Powerful data synchronization for React
-- **🌐 Axios** - Promise-based HTTP client
+### **Typography Scaling**
+- **Headings**: `clamp(2rem, 5vw, 3.5rem)` for smooth scaling
+- **Body Text**: `clamp(1rem, 2vw, 1.25rem)` for readability
+- **Component Text**: Responsive font sizes with proper line-height
 
-### 🗄️ Database & Backend
-- **🗄️ Prisma** - Next-generation Node.js and TypeScript ORM
-- **🔐 NextAuth.js** - Complete open-source authentication solution
+### **Performance Optimizations**
+- **Lazy Loading**: Images and components load when needed
+- **Responsive Images**: Different sizes for different viewports
+- **Reduced Motion**: Respects `prefers-reduced-motion`
+- **Touch Optimized**: Proper touch targets and gestures
 
-### 🎨 Advanced UI Features
-- **📊 TanStack Table** - Headless UI for building tables and datagrids
-- **🖱️ DND Kit** - Modern drag and drop toolkit for React
-- **📊 Recharts** - Redefined chart library built with React and D3
-- **🖼️ Sharp** - High performance image processing
+## Tech Stack
 
-### 🌍 Internationalization & Utilities
-- **🌍 Next Intl** - Internationalization library for Next.js
-- **📅 Date-fns** - Modern JavaScript date utility library
-- **🪝 ReactUse** - Collection of essential React hooks for modern development
+- **Framework**: Next.js 15 with App Router
+- **Language**: TypeScript 5
+- **Styling**: Tailwind CSS 4 with shadcn/ui components
+- **Icons**: Lucide React
+- **Form Handling**: web3forms API
 
-## 🎯 Why This Scaffold?
-
-- **🏎️ Fast Development** - Pre-configured tooling and best practices
-- **🎨 Beautiful UI** - Complete shadcn/ui component library with advanced interactions
-- **🔒 Type Safety** - Full TypeScript configuration with Zod validation
-- **📱 Responsive** - Mobile-first design principles with smooth animations
-- **🗄️ Database Ready** - Prisma ORM configured for rapid backend development
-- **🔐 Auth Included** - NextAuth.js for secure authentication flows
-- **📊 Data Visualization** - Charts, tables, and drag-and-drop functionality
-- **🌍 i18n Ready** - Multi-language support with Next Intl
-- **🚀 Production Ready** - Optimized build and deployment settings
-- **🤖 AI-Friendly** - Structured codebase perfect for AI assistance
-
-## 🚀 Quick Start
-
-```bash
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Start production server
-npm start
-```
-
-Open [http://localhost:3000](http://localhost:3000) to see your application running.
-
-## 🤖 Powered by Z.ai
-
-This scaffold is optimized for use with [Z.ai](https://chat.z.ai) - your AI assistant for:
-
-- **💻 Code Generation** - Generate components, pages, and features instantly
-- **🎨 UI Development** - Create beautiful interfaces with AI assistance  
-- **🔧 Bug Fixing** - Identify and resolve issues with intelligent suggestions
-- **📝 Documentation** - Auto-generate comprehensive documentation
-- **🚀 Optimization** - Performance improvements and best practices
-
-Ready to build something amazing? Start chatting with Z.ai at [chat.z.ai](https://chat.z.ai) and experience the future of AI-powered development!
-
-## 📁 Project Structure
+## Project Structure
 
 ```
-src/
-├── app/                 # Next.js App Router pages
-├── components/          # Reusable React components
-│   └── ui/             # shadcn/ui components
-├── hooks/              # Custom React hooks
-└── lib/                # Utility functions and configurations
+├── src/
+│   ├── app/
+│   │   ├── page.tsx          # Main portfolio page
+│   │   └── layout.tsx        # Root layout
+│   ├── components/
+│   │   └── ui/               # shadcn/ui components
+│   └── lib/
+├── public/
+│   ├── images/               # Local images for slider
+│   │   ├── img1.jpg
+│   │   ├── img2.jpg
+│   │   ├── img3.jpg
+│   │   └── img4.jpg
+│   └── medal.png             # Medal image for mobile fallback
+└── prisma/
 ```
 
-## 🎨 Available Features & Components
+## Image Slider Features
 
-This scaffold includes a comprehensive set of modern web development tools:
+- **Auto-slide**: Changes every 4 seconds automatically
+- **Manual Navigation**: Left/right arrow buttons with touch support
+- **Dot Indicators**: Click to jump to specific image
+- **Smooth Transitions**: 1-second fade effects
+- **Responsive**: Works on all screen sizes with proper touch targets
 
-### 🧩 UI Components (shadcn/ui)
-- **Layout**: Card, Separator, Aspect Ratio, Resizable Panels
-- **Forms**: Input, Textarea, Select, Checkbox, Radio Group, Switch
-- **Feedback**: Alert, Toast (Sonner), Progress, Skeleton
-- **Navigation**: Breadcrumb, Menubar, Navigation Menu, Pagination
-- **Overlay**: Dialog, Sheet, Popover, Tooltip, Hover Card
-- **Data Display**: Badge, Avatar, Calendar
+## Responsive Breakpoints
 
-### 📊 Advanced Data Features
-- **Tables**: Powerful data tables with sorting, filtering, pagination (TanStack Table)
-- **Charts**: Beautiful visualizations with Recharts
-- **Forms**: Type-safe forms with React Hook Form + Zod validation
+- **Mobile**: < 640px
+  - Single column layout
+  - Compact navigation (hamburger menu)
+  - Smaller touch targets
+  - Optimized image sizes
 
-### 🎨 Interactive Features
-- **Animations**: Smooth micro-interactions with Framer Motion
-- **Drag & Drop**: Modern drag-and-drop functionality with DND Kit
-- **Theme Switching**: Built-in dark/light mode support
+- **Tablet**: 640px - 1024px
+  - Two-column grids
+  - Medium-sized components
+  - Touch-optimized interactions
 
-### 🔐 Backend Integration
-- **Authentication**: Ready-to-use auth flows with NextAuth.js
-- **Database**: Type-safe database operations with Prisma
-- **API Client**: HTTP requests with Axios + TanStack Query
-- **State Management**: Simple and scalable with Zustand
+- **Desktop**: > 1024px
+  - Multi-column layouts
+  - Full navigation
+  - Hover states and animations
+  - Larger images and text
 
-### 🌍 Production Features
-- **Internationalization**: Multi-language support with Next Intl
-- **Image Optimization**: Automatic image processing with Sharp
-- **Type Safety**: End-to-end TypeScript with Zod validation
-- **Essential Hooks**: 100+ useful React hooks with ReactUse for common patterns
+## Setup Instructions
 
-## 🤝 Get Started with Z.ai
+1. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-1. **Clone this scaffold** to jumpstart your project
-2. **Visit [chat.z.ai](https://chat.z.ai)** to access your AI coding assistant
-3. **Start building** with intelligent code generation and assistance
-4. **Deploy with confidence** using the production-ready setup
+2. **Run development server**:
+   ```bash
+   npm run dev
+   ```
 
----
+3. **Build for production**:
+   ```bash
+   npm run build
+   ```
 
-Built with ❤️ for the developer community. Supercharged by [Z.ai](https://chat.z.ai) 🚀
+4. **Run linter**:
+   ```bash
+   npm run lint
+   ```
+
+## Image Configuration
+
+The portfolio uses local images stored in `/public/images/` for the slider:
+- `img1.jpg` - Slider image 1
+- `img2.jpg` - Slider image 2  
+- `img3.jpg` - Slider image 3
+- `img4.jpg` - Slider image 4
+
+Replace these placeholder files with your actual images. Recommended sizes:
+- **Desktop**: 1920x1080px
+- **Mobile**: 800x600px
+- **Format**: JPEG with 80-90% quality
+
+## Contact Form
+
+The contact form uses web3forms API. Update the access key in `src/app/page.tsx`:
+```javascript
+access_key: 'your-web3forms-access-key'
+```
+
+## Personal Information
+
+Current configuration:
+- **Name**: Ardin
+- **Title**: Economics student at Gadjah Mada University
+- **Tagline**: Explorer
+- **Interests**: Web Development, Cloud Computing, LLM, Design, Space Exploration
+
+## Projects
+
+1. **Bot Mail to WhatsApp Forwarder** - Automated message forwarding system
+2. **Personal Dashboard** - Comprehensive life management hub
+3. **Agentic Tracker Tools** - AI-powered productivity analytics
+
+## Performance Guidelines
+
+- **LCP Target**: < 2.5s on 3G
+- **Image Optimization**: WebP format with fallbacks
+- **Bundle Size**: Minimize JavaScript for mobile
+- **Animation Performance**: Use CSS transforms and will-change
+
+## Accessibility
+
+- **Keyboard Navigation**: All interactive elements accessible
+- **Screen Reader Support**: Proper ARIA labels and roles
+- **Color Contrast**: AA compliance for text readability
+- **Touch Targets**: Minimum 44px for mobile usability
+- **Reduced Motion**: Respects user preferences
+
+## Deployment
+
+This project is configured for deployment on Vercel or any Next.js compatible platform.
+
+## License
+
+MIT License

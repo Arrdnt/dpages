@@ -75,7 +75,7 @@
   --sidebar-primary-foreground: oklch(1.0000 0 0);
   --sidebar-accent: oklch(0.9401 0 0);
   --sidebar-accent-foreground: oklch(0 0 0);
-  --sidebar-border: oklch(0.9401 0 0);
+  --sidebar-border: oklch(0.9300 0.0092 268.3843);
   --sidebar-ring: oklch(0 0 0);
   --font-sans: Geologica, ui-sans-serif, sans-serif, system-ui;
   --font-serif: Lora, serif;
@@ -150,6 +150,11 @@
   --shadow-lg: 0px 2px 3px 0px hsl(0 0% 0% / 0.16), 0px 4px 6px -1px hsl(0 0% 0% / 0.16);
   --shadow-xl: 0px 2px 3px 0px hsl(0 0% 0% / 0.16), 0px 8px 10px -1px hsl(0 0% 0% / 0.16);
   --shadow-2xl: 0px 2px 3px 0px hsl(0 0% 0% / 0.40);
+  --tracking-tighter: calc(var(--tracking-normal) - 0.05em);
+  --tracking-tight: calc(var(--tracking-normal) - 0.025em);
+  --tracking-normal: var(--tracking-normal);
+  --tracking-wide: calc(var(--tracking-normal) + 0.025em);
+  --tracking-wider: calc(var(--tracking-normal) + 0.1em);
 }
 
 @theme inline {
@@ -208,8 +213,7 @@
   --tracking-tight: calc(var(--tracking-normal) - 0.025em);
   --tracking-normal: var(--tracking-normal);
   --tracking-wide: calc(var(--tracking-normal) + 0.025em);
-  --tracking-wider: calc(var(--tracking-normal) + 0.05em);
-  --tracking-widest: calc(var(--tracking-normal) + 0.1em);
+  --tracking-wider: calc(var(--tracking-normal) + 0.1em);
 }
 
 body {
@@ -279,136 +283,40 @@ body {
     animation-delay: 3s;
   }
   
-  .float-icon-1 {
-    position: fixed;
-    top: 10%;
-    left: 5%;
-    animation: float1 25s ease-in-out infinite;
-    z-index: 1;
-    opacity: 0.3;
-    transition: opacity 0.3s ease;
+  /* New animations for moving elements */
+  .animate-pulse-slow {
+    animation: pulse-slow 3s ease-in-out infinite;
   }
   
-  .float-icon-1:hover {
-    opacity: 0.8;
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.1); }
   }
   
-  .float-icon-2 {
-    position: fixed;
-    top: 20%;
-    right: 8%;
-    animation: float2 30s ease-in-out infinite;
-    z-index: 1;
-    opacity: 0.3;
-    transition: opacity 0.3s ease;
+  .animate-float-medium {
+    animation: float-medium 4s ease-in-out infinite;
   }
   
-  .float-icon-2:hover {
-    opacity: 0.8;
+  @keyframes float-medium {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(20px, -15px) rotate(90deg); }
+    50% { transform: translate(-15px, 20px) rotate(180deg); }
+    75% { transform: translate(15px, -20px) rotate(270deg); }
   }
   
-  .float-icon-3 {
-    position: fixed;
-    top: 50%;
-    left: 3%;
-    animation: float3 35s ease-in-out infinite;
-    z-index: 1;
-    opacity: 0.3;
-    transition: opacity 0.3s ease;
+  .animate-float-fast {
+    animation: float-fast 2s ease-in-out infinite;
   }
   
-  .float-icon-3:hover {
-    opacity: 0.8;
+  @keyframes float-fast {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    33% { transform: translate(15px, -10px) rotate(45deg); }
+    66% { transform: translate(-10px, 15px) rotate(90deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
   }
   
-  .float-icon-4 {
-    position: fixed;
-    top: 70%;
-    right: 6%;
-    animation: float1 28s ease-in-out infinite;
-    z-index: 1;
-    opacity: 0.3;
-    transition: opacity 0.3s ease;
-  }
-  
-  .float-icon-4:hover {
-    opacity: 0.8;
-  }
-  
-  .float-icon-5 {
-    position: fixed;
-    top: 85%;
-    left: 10%;
-    animation: float2 32s ease-in-out infinite;
-    z-index: 1;
-    opacity: 0.3;
-    transition: opacity 0.3s ease;
-  }
-  
-  .float-icon-5:hover {
-    opacity: 0.8;
-  }
-  
-  .float-icon-6 {
-    position: fixed;
-    top: 15%;
-    left: 50%;
-    animation: float3 27s ease-in-out infinite;
-    z-index: 1;
-    opacity: 0.3;
-    transition: opacity 0.3s ease;
-  }
-  
-  .float-icon-6:hover {
-    opacity: 0.8;
-  }
-  
-  .float-icon-7 {
-    position: fixed;
-    top: 60%;
-    left: 85%;
-    animation: float1 33s ease-in-out infinite;
-    z-index: 1;
-    opacity: 0.3;
-    transition: opacity 0.3s ease;
-  }
-  
-  .float-icon-7:hover {
-    opacity: 0.8;
-  }
-  
-  .float-icon-8 {
-    position: fixed;
-    top: 40%;
-    right: 15%;
-    animation: float2 29s ease-in-out infinite;
-    z-index: 1;
-    opacity: 0.3;
-    transition: opacity 0.3s ease;
-  }
-  
-  .float-icon-8:hover {
-    opacity: 0.8;
-  }
-  
-  @keyframes float1 {
-    0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
-    25% { transform: translate(30px, -20px) rotate(90deg) scale(1.1); }
-    50% { transform: translate(-20px, 30px) rotate(180deg) scale(0.9); }
-    75% { transform: translate(40px, 10px) rotate(270deg) scale(1.05); }
-  }
-  
-  @keyframes float2 {
-    0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
-    33% { transform: translate(-25px, 25px) rotate(120deg) scale(1.1); }
-    66% { transform: translate(35px, -15px) rotate(240deg) scale(0.95); }
-  }
-  
-  @keyframes float3 {
-    0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
-    20% { transform: translate(20px, -30px) rotate(72deg) scale(1.08); }
-    40% { transform: translate(-30px, 20px) rotate(144deg) scale(0.92); }
-    60% { transform: translate(25px, 35px) rotate(216deg) scale(1.06); }
-    80% { transform: translate(-15px, -25px) rotate(288deg) scale(0.98); }
+  /* Background gradient animation */
+  .bg-gradient-animated {
+    transition: all 0.5s ease;
   }
 }
