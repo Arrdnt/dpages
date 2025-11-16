@@ -342,15 +342,6 @@ export default function Home() {
                   ))}
                 </div>
               </div>
-              
-              {/* Floating medal icon - hidden on mobile */}
-              <div className="absolute -top-2 -right-2 sm:top-2 sm:right-2 lg:top-4 lg:right-4 bg-yellow-500/20 backdrop-blur-md rounded-full p-1.5 sm:p-2 lg:p-3 float-icon-slow hidden sm:block">
-                <span className="text-yellow-400 text-lg sm:text-xl lg:text-2xl">🏆</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Skills Section */}
       <section id="skills" className="relative py-16 sm:py-20 lg:py-24 z-10">
